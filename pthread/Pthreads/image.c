@@ -136,7 +136,7 @@ struct threadData {
 //Usage: Prints usage information for the program
 //Returns: -1
 int Usage(){
-    printf("Usage: image <filename> <type> <n>\n\twhere type is one of (edge,sharpen,blur,gauss,emboss,identity) \n\tand n is the number of processors.\n");
+	printf("Usage: image <filename> <type> \n\twhere type is one of (edge,sharpen,blur,gauss,emboss,identity). \n\n");
     return -1;
 }
 
@@ -158,14 +158,14 @@ int main(int argc,char* argv[]){
     long t1,t2;					// Statistics
     t1=time(NULL);
 
-    if (argc!=4)			// Prints usage if invalid input
+    if (argc!=3)			// Prints usage if invalid input
 		 return Usage();
 
 	// Initialize variables needed for threads	
 	int thread_count;	
 	long thread;
 	pthread_t* thread_handles;
-	thread_count=strtol(argv[3],NULL,10);
+	thread_count = 4;		// Thread count is always 4 for Darwin
 	thread_handles=(pthread_t*)malloc(thread_count*sizeof(pthread_t));
 
 	
@@ -259,3 +259,6 @@ int main(int argc,char* argv[]){
 
     return 0;
 }
+
+
+
