@@ -18,8 +18,7 @@ typedef double Matrix[3][3];
 
 // Function declarations
 uint8_t getPixelValue(Image* srcImage,int x,int y,int bit,Matrix algorithm);
-void convolute_serial(Image* srcImage,Image* destImage,Matrix algorithm);
-void * convolute(void * data);
+void convolute(Image* srcImage,Image* destImage,Matrix algorithm);
 int Usage();
 enum KernelTypes GetKernelType(char* type);
 
