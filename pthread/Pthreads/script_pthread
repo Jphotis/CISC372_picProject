@@ -1,0 +1,109 @@
+Script started on Mon 30 Oct 2023 11:31:00 PM EDT
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[?1034h[jpho@login01.darwin Pthreads]$ workgroup -g ea-cisc372-silber
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[?1034h[(ea-cisc372-silber:jpho)@login01.darwin Pthreads]$ vpkg_require gcc
+Adding package `gcc/4.8.5` to your environment
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[(ea-cisc372-silber:jpho)@login01.darwin Pthreads]$ make
+gcc -g image.c -o image -lm -lpthread
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[(ea-cisc372-silber:jpho)@login01.darwin Pthreads]$ make clean
+rm -f image output.png
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[(ea-cisc372-silber:jpho)@login01.darwin Pthreads]$ make
+gcc -g image.c -o image -lm -lpthread
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[(ea-cisc372-silber:jpho)@login01.darwin Pthreads]$ salloc --ntasks=1 --cpus-per -task=4 --partition=standard
+salloc: Granted job allocation 4766138
+salloc: Waiting for resource configuration
+salloc: Nodes r1n13 are ready for job
+]0;jpho@r1n13.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[?1034h[jpho@r1n13 Pthreads]$ ./image pic1.jpg edge
+3024
+Initializing thread 0.
+Initializing thread 1.
+Initializing thread 2.
+Hello. Thread 0 begins.
+Hello. Thread 2 begins.
+Hello. Thread 1 begins.
+Initializing thread 3.
+Hello. Thread 3 begins.
+Goodbye. Thread 1 ends.
+Goodbye. Thread 2 ends.
+Goodbye. Thread 0 ends.
+Goodbye. Thread 3 ends.
+Took 7 seconds
+]0;jpho@r1n13.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@r1n13 Pthreads]$ ls
+[0m[38;5;27mExample[0m         [38;5;27mSerial_Version[0m  image.c     [38;5;13mpic1.jpg[0m        stb_image.h
+Makefile        error_status    image.h     [38;5;13mpic4.jpg[0m        stb_image_write.h
+[38;5;27mOpenmp_Version[0m  [38;5;34mimage[0m           [38;5;13moutput.png[0m  script_pthread
+]0;jpho@r1n13.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@r1n13 Pthreads]$ cd Openmp_Version/
+]0;jpho@r1n13.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads/Openmp_Version[jpho@r1n13 Openmp_Version]$ make clean
+rm -f image output.png
+]0;jpho@r1n13.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads/Openmp_Version[jpho@r1n13 Openmp_Version]$ make
+gcc -g -Wall -fopenmp image.c -o image -lm -lpthread
+In file included from [01m[Kimage.c:10:0[m[K:
+[01m[Kstb_image.h:[m[K In function '[01m[Kstbi__load_gif_main[m[K':
+[01m[Kstb_image.h:6779:11:[m[K [01;35m[Kwarning: [m[Kvariable '[01m[Kdelays_size[m[K' set but not used [-Wunused-but-set-variable]
+       int delays_size = 0;
+[01;32m[K           ^[m[K
+[01m[Kstb_image.h:6778:11:[m[K [01;35m[Kwarning: [m[Kvariable '[01m[Kout_size[m[K' set but not used [-Wunused-but-set-variable]
+       int out_size = 0;
+[01;32m[K           ^[m[K
+]0;jpho@r1n13.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads/Openmp_Version[jpho@r1n13 Openmp_Version]$ make cleancd Openmp_Version/ls[K./image pic1.jpg edge
+I made it here!
+I made it here 2!
+Took 6 seconds
+]0;jpho@r1n13.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads/Openmp_Version[jpho@r1n13 Openmp_Version]$ exit
+logout
+salloc: Relinquishing job allocation 4766138
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[(ea-cisc372-silber:jpho)@login01.darwin Pthreads]$ exit
+logout
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@login01.darwin Pthreads]$ ls
+error_status  image.c   [0m[38;5;27mOpenmp_Version[0m  [38;5;13mpic4.jpg[0m        stb_image.h
+[38;5;27mExample[0m       image.h   [38;5;13moutput.png[0m      script_pthread  stb_image_write.h
+[38;5;34mimage[0m         Makefile  [38;5;13mpic1.jpg[0m        [38;5;27mSerial_Version[0m
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@login01.darwin Pthreads]$ git add -a[KA
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@login01.darwin Pthreads]$ git ps[K[Kcommit -v fsdhjfdk
+error: pathspec 'fsdhjfdk' did not match any file(s) known to git.
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@login01.darwin Pthreads]$ git commit -v fsdhjfdk[C[K[K[K[K[K[K[K[K[K[Km The script[K[K[K[K[K[K[Kscript
+[main bf6acf1] Thescript
+ Committer: Jordan Photis <jpho@r0login1.localdomain.hpc.udel.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ rewrite pthread/Pthreads/Openmp_Version/image (93%)
+ rewrite pthread/Pthreads/image (92%)
+ create mode 100644 pthread/Pthreads/script_pthread
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@login01.darwin Pthreads]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': Jphotis
+Password for 'https://Jphotis@github.com': 
+Counting objects: 14, done.
+Delta compression using up to 128 threads.
+Compressing objects:  16% (1/6)   Compressing objects:  33% (2/6)   Compressing objects:  50% (3/6)   Compressing objects:  66% (4/6)   Compressing objects:  83% (5/6)   Compressing objects: 100% (6/6)   Compressing objects: 100% (6/6), done.
+Writing objects:  12% (1/8)   Writing objects:  25% (2/8)   Writing objects:  37% (3/8)   Writing objects:  50% (4/8)   Writing objects:  62% (5/8)   Writing objects:  87% (7/8)   Writing objects: 100% (8/8)   Writing objects: 100% (8/8), 152.94 KiB | 0 bytes/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/4)[Kremote: Resolving deltas:  25% (1/4)[Kremote: Resolving deltas:  50% (2/4)[Kremote: Resolving deltas:  75% (3/4)[Kremote: Resolving deltas: 100% (4/4)[Kremote: Resolving deltas: 100% (4/4), completed with 3 local objects.[K
+remote: To https://github.com/Jphotis/CISC372_picProject.git
+   9c3c713..bf6acf1  main -> main
+]0;jpho@login01.darwin:~/Projects/Pthreads/CISC372_picProject/pthread/Pthreads[jpho@login01.darwin Pthreads]$ exit
+exit
+
+Script done on Mon 30 Oct 2023 11:37:19 PM EDT
